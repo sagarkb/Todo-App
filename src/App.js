@@ -6,6 +6,8 @@ import Todo from './Todo';
 import db from './firebase';
 import './App.css';
 
+require('dotenv').config();
+
 function App() {
   const [todos, setTodos] = useState([]);
 
@@ -65,8 +67,8 @@ function App() {
 
       <ul>
         {todos.map((todo) => (
-          <div className='unordered'>
-            <Todo key={Math.random()} todo={todo} />
+          <div key={Math.random()} className='unordered'>
+            <Todo todo={todo} />
           </div>
         ))}
       </ul>
